@@ -7,7 +7,7 @@ const IMG_PATH = "https://image.tmdb.org/t/p/w1280"
 const mainEl = document.getElementById('main')
 
 //  initially call the popular movies
-// getMovies();
+getMovies();
 
 async function getMovies(){
     const response = await fetch(API_URL);
@@ -16,11 +16,20 @@ async function getMovies(){
 }
 
  function showMovies(moviesList){
-     console.log(moviesList)
     moviesList.forEach(movie => {
-         const imgEl = document.createElement('img')
-          imgEl.src = IMG_PATH+movie.poster_path
-         mainEl.appendChild(imgEl)
+        const {title, poster_path,vote_average} = movie
+         const movieEl = document.createElement('div')
+         movieEl.classList.add('movie')
+         movieEl.innerHTML=`
+         <img src="${IMG_PATH + poster_path}" alt="${title}">
+           </div>
+           <div class="movie-info">
+               <h3>${title.length<18?`${title}`:`${title.substring(0,15)}...`}</h3>
+               <span>${vote_average}</span> 
+           </div>
+       
+         `
+         mainEl.appendChild(movieEl)
     });
 
 }
