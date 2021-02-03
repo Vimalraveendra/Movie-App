@@ -25,11 +25,22 @@ async function getMovies(){
            </div>
            <div class="movie-info">
                <h3>${title.length<18?`${title}`:`${title.substring(0,15)}...`}</h3>
-               <span>${vote_average}</span> 
+               <span class="${getClassByRate(vote_average)}">${vote_average}</span> 
            </div>
        
          `
          mainEl.appendChild(movieEl)
     });
 
+}
+
+
+function getClassByRate(vote){
+    if(vote>=8){
+        return 'green'
+    }else if(vote>=5){
+         return 'orange'
+    }else{
+         return 'red'
+    }
 }
