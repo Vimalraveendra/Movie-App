@@ -38,6 +38,8 @@ body {
   padding: 0.5rem;
   color: #fff;
   letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 .movie-info h3 {
   margin: 0;
@@ -45,6 +47,14 @@ body {
 .movie-info span {
   background-color: #202458;
   padding: 0.3rem;
-  font-size: 0.8rem;
   border-radius: 3px;
+}
+.movie-info .green {
+  color: rgb(97, 173, 20);
+}
+.movie-info .orange {
+  color: orange;
+}
+.movie-info .red {
+  color: rgb(163, 25, 25);
 }
