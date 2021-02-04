@@ -21,9 +21,8 @@ async function getMovies(url){
  function showMovies(moviesList){
       // clear the main element container
       mainEl .innerHTML="";
-     console.log("movieList",moviesList)
     moviesList.forEach(movie => {
-        const {title, poster_path,vote_average} = movie
+        const {title, poster_path,vote_average,overview} = movie
         if(poster_path!==null){
          const movieEl = document.createElement('div')
          movieEl.classList.add('movie')
@@ -33,7 +32,11 @@ async function getMovies(url){
            <div class="movie-info">
                <h3>${title.length<18?`${title}`:`${title.substring(0,15)}...`}</h3>
                <span class="${getClassByRate(vote_average)}">${vote_average}</span> 
+               
            </div>
+           <div class ="overview">
+                ${overview}
+               </div>
        
          `
          mainEl.appendChild(movieEl)
