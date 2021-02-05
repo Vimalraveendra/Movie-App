@@ -31,12 +31,9 @@ async function getMovies(url){
            </div>
            <div class="movie-info">
                <h3>${title.length<18?`${title}`:`${title.substring(0,15)}...`}</h3>
-               <span class="${getClassByRate(vote_average)}">${vote_average}</span> 
-               
+               <span class="${getClassByRate(vote_average)}">${vote_average}</span>  
            </div>
-           <div class ="overview">
-                ${overview}
-               </div>
+           
        
          `
          mainEl.appendChild(movieEl)
