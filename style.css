@@ -95,3 +95,19 @@ header {
 .movie-info .red {
   color: rgb(163, 25, 25);
 }
+
+.overview {
+  background-color: #fff;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0px;
+  right: 0;
+  overflow: auto;
+  display: none;
+}
+
+.movie:hover .overview {
+  display: block;
+}
